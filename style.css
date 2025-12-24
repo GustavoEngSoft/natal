@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(#0b1d3a, #000);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 30px 20px;
+}
+
+/* Estrela */
+.star {
+    font-size: 40px;
+    color: gold;
+    animation: brilho 1.5s infinite alternate;
+}
+
+@keyframes brilho {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
+/* Árvore */
+.tree {
+    position: relative;
+    margin: 30px auto;
+    width: 0;
+}
+
+.layer {
+    width: 0;
+    height: 0;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-bottom: 160px solid #0f7a3c;
+    margin: -40px auto;
+}
+
+.layer:nth-child(2) {
+    border-bottom-color: #0c6b33;
+}
+
+.layer:nth-child(3) {
+    border-bottom-color: #095c2b;
+}
+
+/* Tronco */
+.trunk {
+    width: 50px;
+    height: 60px;
+    background: #6b3e26;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+/* Pisca-pisca */
+.light {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: piscar 1.5s infinite alternate;
+}
+
+@keyframes piscar {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+/* Mensagem */
+.message {
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.message h1 {
+    color: #ffd700;
+}
+
+.verse {
+    margin-top: 15px;
+    font-style: italic;
+    color: #ddd;
+}
+
+/* Neve */
+.snow {
+    position: fixed;
+    top: -10px;
+    color: white;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
