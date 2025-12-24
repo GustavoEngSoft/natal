@@ -1,27 +1,29 @@
-// Pisca-pisca mudando cores
+// 🎄 Pisca-pisca
+const colors = ['#ff4d4d', '#ffd93d', '#4ddcff', '#b96cff', '#4dff88'];
+
 setInterval(() => {
     document.querySelectorAll('.light').forEach(light => {
         light.style.background =
-            `hsl(${Math.random() * 360}, 100%, 60%)`;
+            colors[Math.floor(Math.random() * colors.length)];
     });
-}, 800);
+}, 900);
 
-// Criar neve
+// ❄️ Neve caindo como chuva
 function criarNeve() {
     const snow = document.createElement('div');
     snow.classList.add('snow');
     snow.innerHTML = '❄';
 
     snow.style.left = Math.random() * window.innerWidth + 'px';
-    snow.style.animationDuration = (Math.random() * 3 + 2) + 's';
-    snow.style.opacity = Math.random();
     snow.style.fontSize = (Math.random() * 10 + 10) + 'px';
+    snow.style.opacity = Math.random();
+    snow.style.animationDuration = (Math.random() * 3 + 3) + 's';
 
     document.body.appendChild(snow);
 
     setTimeout(() => {
         snow.remove();
-    }, 5000);
+    }, 6000);
 }
 
-setInterval(criarNeve, 300);
+setInterval(criarNeve, 200);

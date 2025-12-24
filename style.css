@@ -1,59 +1,76 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(#0b1d3a, #000);
-    color: #fff;
-    text-align: center;
-    overflow-x: hidden;
+* {
+    box-sizing: border-box;
 }
 
-.container {
-    padding: 30px 20px;
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #08162e, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Cartão */
+.card {
+    text-align: center;
+    padding: 40px 30px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 /* Estrela */
 .star {
-    font-size: 40px;
-    color: gold;
-    animation: brilho 1.5s infinite alternate;
-}
-
-@keyframes brilho {
-    from { opacity: 0.6; }
-    to { opacity: 1; }
+    font-size: 44px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 15px gold);
 }
 
 /* Árvore */
 .tree {
     position: relative;
-    margin: 30px auto;
-    width: 0;
+    width: 220px;
+    height: 280px;
+    margin: 10px auto;
 }
 
 .layer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 0;
-    border-left: 120px solid transparent;
-    border-right: 120px solid transparent;
-    border-bottom: 160px solid #0f7a3c;
-    margin: -40px auto;
+    border-left: 110px solid transparent;
+    border-right: 110px solid transparent;
 }
 
-.layer:nth-child(2) {
-    border-bottom-color: #0c6b33;
+.layer1 {
+    top: 0;
+    border-bottom: 120px solid #1c9b55;
 }
 
-.layer:nth-child(3) {
-    border-bottom-color: #095c2b;
+.layer2 {
+    top: 70px;
+    border-bottom: 130px solid #178447;
+}
+
+.layer3 {
+    top: 150px;
+    border-bottom: 140px solid #136a3a;
 }
 
 /* Tronco */
 .trunk {
-    width: 50px;
-    height: 60px;
+    width: 42px;
+    height: 58px;
     background: #6b3e26;
-    margin: 0 auto;
-    border-radius: 5px;
+    margin: -5px auto 20px;
+    border-radius: 6px;
 }
 
 /* Pisca-pisca */
@@ -62,43 +79,52 @@ body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    animation: piscar 1.5s infinite alternate;
+    animation: blink 1.2s infinite alternate;
+    box-shadow: 0 0 12px currentColor;
 }
 
-@keyframes piscar {
-    from { opacity: 0.3; }
+@keyframes blink {
+    from { opacity: 0.4; }
     to { opacity: 1; }
 }
 
-/* Mensagem */
-.message {
-    margin-top: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+/* Posições dos pisca-piscas */
+.l1 { top: 60px; left: 95px; }
+.l2 { top: 80px; left: 120px; }
+.l3 { top: 100px; left: 70px; }
+.l4 { top: 120px; left: 145px; }
+.l5 { top: 140px; left: 90px; }
+.l6 { top: 160px; left: 50px; }
+.l7 { top: 170px; left: 130px; }
+.l8 { top: 190px; left: 80px; }
+.l9 { top: 200px; left: 110px; }
+.l10 { top: 215px; left: 60px; }
+.l11 { top: 235px; left: 100px; }
+.l12 { top: 250px; left: 130px; }
+
+/* Texto */
+h1 {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #f0f0f0;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
-.message h1 {
-    color: #ffd700;
-}
-
-.verse {
-    margin-top: 15px;
-    font-style: italic;
-    color: #ddd;
-}
-
-/* Neve */
+/* ❄️ NEVE REALISTA */
 .snow {
     position: fixed;
     top: -10px;
     color: white;
-    animation: fall linear infinite;
+    animation: fall linear forwards;
+    pointer-events: none;
 }
 
 @keyframes fall {
     to {
-        transform: translateY(100vh);
+        transform: translateY(110vh);
     }
 }
